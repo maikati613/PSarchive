@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        {% block title %}The PlayStation History Archive{% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body class="{{ theme }}">
+
+
+<nav>
+
+    <a href="/">
+        <img class="logo" src="{{ url_for('static', filename='logo.jpg') }}">
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/history">History</a>
+
+        <a href="/about">About</a>
+
+        <a href="/legacy">Legacy</a>
+
+        <a href="/exclusives">Exclusives</a>
+
+    </div>
+
+
+
+</nav>
+
+
+
+
+
+{% block content %}
+
+{% endblock %}
+
+
+
+
+
+<footer>
+
+    <p>
+        © 2026 PlayStation History Archive™. Created in partnership with Sony Interactive Entertainment and PlayStation Heritage Collective. All rights reserved.
+    </p>
+
+</footer>
+
+
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const links = document.querySelectorAll(".archive-nav-button:not(.active)");
+
+    links.forEach(link => {
+
+        link.addEventListener("click", function(event){
+
+            event.preventDefault();
+
+            const destination = this.href;
+
+            document.body.classList.add("page-leaving");
+
+
+            setTimeout(function(){
+
+                window.location.href = destination;
+
+            }, 400);
+
+        });
+
+    });
+
+
+});
+
+</script>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+import sqlite3
+
+
+DATABASE = "archive.db"
+
+
+connection = sqlite3.connect(DATABASE)
+
+cursor = connection.cursor()
+
+
+sections = [
+
+    (
+        2,
+        "Overview",
+        """
+The PlayStation 2 was released by Sony Computer Entertainment
+in Japan on March 4, 2000, followed by worldwide releases later
+that year.
+
+The console became the successor to the original PlayStation and
+expanded the company's position in the gaming industry. It became
+the best-selling video game console of all time, selling over
+155 million units worldwide.
+
+The PS2 is remembered for its massive game library, DVD technology,
+and its influence on the sixth generation of gaming.
+""",
+        1
+    ),
+
+
+    (
+        2,
+        "Development and Release",
+        """
+Sony designed the PlayStation 2 to improve upon the success of the
+original PlayStation while introducing new technology.
+
+One of the biggest changes was the inclusion of a built-in DVD drive.
+At the time, DVD was becoming the new standard for movies, and the
+PS2 helped make DVD players more common in homes.
+
+The console launched with strong support from developers and quickly
+became one of the most successful entertainment products ever made.
+""",
+        2
+    ),
+
+
+    (
+        2,
+        "Hardware Specifications",
+        """
+The PlayStation 2 introduced significant improvements in processing
+power compared to the original PlayStation.
+
+
+CPU:
+
+Emotion Engine processor running at 294.912 MHz
+
+
+Graphics:
+
+Graphics Synthesizer capable of advanced 3D rendering
+
+
+Memory:
+
+32 MB RDRAM
+
+
+Storage:
+
+DVD-ROM discs and optional internal hard drive support
+""",
+        3
+    ),
+
+
+    (
+        2,
+        "DVD Technology and Entertainment",
+        """
+One of the biggest advantages of the PS2 was its ability to play
+DVD movies.
+
+At the time, standalone DVD players were expensive, making the PS2
+an affordable way for many families to enter the DVD era.
+
+This helped the console become more than just a gaming device and
+made it a complete entertainment system.
+""",
+        4
+    ),
+
+
+    (
+        2,
+        "Game Library",
+        """
+The PlayStation 2 developed one of the largest and most diverse
+game libraries in gaming history.
+
+
+Important titles included:
+
+
+• Grand Theft Auto III
+
+• Grand Theft Auto: Vice City
+
+• Grand Theft Auto: San Andreas
+
+• God of War
+
+• Shadow of the Colossus
+
+• Metal Gear Solid 2: Sons of Liberty
+
+• Final Fantasy X
+
+• Gran Turismo 4
+
+• Kingdom Hearts
+""",
+        5
+    ),
+
+
+    (
+        2,
+        "Impact on Gaming",
+        """
+The PS2 helped define the sixth generation of consoles and introduced
+millions of players to new genres and franchises.
+
+It became a platform where developers could experiment with larger
+worlds, cinematic storytelling, and more complex gameplay systems.
+
+Many franchises that remain popular today gained worldwide attention
+during the PS2 era.
+""",
+        6
+    ),
+
+
+    (
+        2,
+        "Legacy",
+        """
+The PlayStation 2 remains the best-selling console in history and is
+considered one of the most important systems ever created.
+
+Its combination of affordable hardware, DVD support, and an enormous
+game library made it a landmark achievement for Sony and the gaming
+industry.
+
+The success of the PS2 established PlayStation as a dominant force
+in gaming for generations to come.
+""",
+        7
+    )
+
+]
+
+
+cursor.executemany("""
+INSERT INTO sections
+(console_id, title, content, display_order)
+VALUES (?, ?, ?, ?)
+""", sections)
+
+
+connection.commit()
+
+connection.close()
+
+
+print("PS2 sections added successfully!")

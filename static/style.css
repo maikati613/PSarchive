@@ -1,0 +1,861 @@
+/* ========================= */
+/* General */
+/* ========================= */
+
+html{
+    height:100%;
+}
+
+body{
+    min-height:100vh;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    font-family:Arial, sans-serif;
+    background:#202020;
+    color:white;
+    scroll-padding-top:90px;
+    transition:
+    background 0.6s ease,
+    color 0.6s ease;
+}
+
+main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+img{
+    border-radius:20px;
+}
+
+/* Smooth hover rendering */
+.feature,
+.archive-button,
+.archive-nav-button{
+    will-change:transform;
+}
+
+/* ========================= */
+/* Navigation */
+/* ========================= */
+nav{
+    background:rgba(17,17,17,0.75);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    padding:15px 40px;
+    display:flex;
+    align-items:center;
+    border-bottom:3px solid transparent;
+    border-image:
+    linear-gradient(
+        90deg,
+        #E31E24,
+        #F5C400,
+        #00A651,
+        #0072CE
+    ) 1;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    width:45px;
+    border-radius:15px;
+}
+
+/* Push navigation buttons right */
+.nav-links{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.nav-links a:hover{
+    color:#0070d1;
+}
+
+/* Theme selector */
+.theme-switcher{
+    position:fixed;
+    top:85px;
+    right:40px;
+    z-index:999;
+}
+
+.theme-switcher select{
+    background:#111;
+    color:white;
+    border:2px solid #0070d1;
+    padding:10px 15px;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+}
+
+.theme-switcher select:hover{
+    box-shadow:
+    0 0 15px #0070d1;
+}
+
+/* ========================= */
+/* Home Page */
+/* ========================= */
+.home{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    padding:50px;
+}
+
+.home-text{
+    width:500px;
+}
+
+.home-text h1{
+    font-size:45px;
+    color:#0070d1;
+}
+
+.home-board{
+    background:#3a3a3a;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.home-board p{
+    line-height:1.6;
+}
+
+.learn-button{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#0070d1;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.learn-button:hover{
+    background:#005bb5;
+    transform:translateY(-3px);
+}
+
+/* ========================= */
+/* Features */
+/* ========================= */
+.features{
+    text-align:center;
+    padding:30px;
+}
+
+.feature-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+}
+
+.feature-link{
+    text-decoration:none;
+    color:white;
+}
+
+.feature{
+    width:250px;
+    padding:20px;
+    background:#3a3a3a;
+    border-radius:20px;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+    border:2px solid rgba(0,112,209,0);
+    transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.feature:hover{
+    transform:translateY(-10px);
+    border-color:#0070d1;
+    box-shadow:
+    0 0 15px #0070d1,
+    0 0 30px rgba(0,112,209,0.5);
+}
+
+.feature h3{
+    color:#0070d1;
+}
+
+/* ========================= */
+/* Pages */
+/* ========================= */
+.page{
+    width:80%;
+    margin:40px auto;
+    padding:40px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.page h1{
+    text-align:center;
+    color:#0070d1;
+}
+
+/* ========================= */
+/* History (Hover effects removed) */
+/* ========================= */
+.history-section{
+    padding:30px;
+    margin:25px 0;
+    background:#3a3a3a;
+    border-radius:25px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    border:2px solid rgba(0,112,209,0);
+}
+
+.history-section h2{
+    color:#0070d1;
+}
+
+.history-section p{
+    line-height:1.6;
+}
+
+/* ========================= */
+/* About Page (Hover effects removed) */
+/* ========================= */
+.about-section,
+.controller-section{
+    display:block;
+    background:#3a3a3a;
+    padding:30px;
+    margin:25px 0;
+    border-radius:25px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.about-section h2,
+.controller-section h2{
+    color:#0070d1;
+    margin-top:0;
+}
+
+.about-section p,
+.controller-section p{
+    line-height:1.6;
+}
+
+/* ========================= */
+/* Legacy Timeline (Hover effects removed) */
+/* ========================= */
+.console-section{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:30px;
+    margin:70px 0;
+}
+
+.console-section:nth-of-type(even){
+    flex-direction:row-reverse;
+}
+
+.console-text{
+    width:380px;
+    background:#3a3a3a;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    border:2px solid rgba(0,112,209,0);
+}
+
+.console-text h2{
+    color:#0070d1;
+    font-size:28px;
+    margin-top:0;
+}
+
+.console-text p{
+    line-height:1.5;
+}
+
+.console-section img{
+    width:330px;
+    box-shadow:0 0 25px rgba(0,0,0,0.7);
+}
+
+/* ========================= */
+/* Legacy Information Boxes (Hover effects removed) */
+/* ========================= */
+.legacy-section{
+    background:#3a3a3a;
+    padding:25px;
+    border-radius:25px;
+    margin:35px 0;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    border:2px solid rgba(0,112,209,0);
+}
+
+.legacy-section h2{
+    color:#0070d1;
+}
+
+.legacy-section p{
+    line-height:1.6;
+}
+
+/* ========================= */
+/* Exclusive Games (Hover effects removed) */
+/* ========================= */
+.game-section{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:30px;
+    margin:70px 0;
+}
+
+.game-section:nth-of-type(even){
+    flex-direction:row-reverse;
+}
+
+.game-text{
+    width:380px;
+    background:#3a3a3a;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    border:2px solid rgba(0,112,209,0);
+}
+
+.game-text h2{
+    color:#0070d1;
+    font-size:28px;
+    margin-top:0;
+}
+
+.game-text p{
+    line-height:1.6;
+}
+
+.game-section img{
+    width:330px;
+    box-shadow:0 0 25px rgba(0,0,0,0.7);
+}
+
+/* ========================= */
+/* Archive Navigation */
+/* ========================= */
+.archive-navigation{
+    margin-top:60px;
+    text-align:center;
+}
+
+.archive-navigation h2{
+    color:#0070d1;
+    margin-bottom:20px;
+}
+
+.archive-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.archive-nav-button{
+    display:inline-block;
+    padding:12px 22px;
+    text-decoration:none;
+    color:#0070d1;
+    border:2px solid #0070d1;
+    border-radius:12px;
+    font-weight:bold;
+    transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.archive-nav-button:hover{
+    background:#0070d1;
+    color:white;
+    transform:translateY(-3px);
+}
+
+.archive-nav-button.active{
+    background:#0070d1;
+    color:white;
+}
+
+/* ============================================================= */
+/* Archive Buttons (Text Restored + Pill Gradient Border Layer)   */
+/* ============================================================= */
+.archive-button{
+    position:relative;
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 35px;
+    text-decoration:none;
+    font-weight:bold;
+    z-index:1;
+
+    /* Elegant Clean Color Matching The Border Blend */
+    color:#0072CE;
+
+    transition:transform 0.3s ease, color 0.3s ease;
+}
+
+/* Border Mask Generator layer */
+.archive-button::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50px; /* Forces identical perfect pill curve regardless of text size */
+    border:3px solid transparent;
+    background:
+        linear-gradient(#3a3a3a, #3a3a3a) padding-box,
+        linear-gradient(90deg, #E31E24, #F5C400, #00A651, #0072CE) border-box;
+    z-index:-1;
+    transition:box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Active Hover Glow Transitions */
+.archive-button:hover{
+    transform:translateY(-3px);
+    color:white;
+}
+
+.archive-button:hover::before{
+    background:
+        linear-gradient(#0072CE, #0072CE) padding-box,
+        linear-gradient(90deg, #E31E24, #F5C400, #00A651, #0072CE) border-box;
+    box-shadow:
+        0 0 12px rgba(0,114,206,0.6),
+        0 0 24px rgba(0,166,81,0.3);
+}
+
+/* Placeholder settings (Locks shape/colors, terminates mouse triggers) */
+.archive-button.placeholder {
+    opacity:0.55;
+    cursor:default !important;
+    pointer-events:none;
+    transform:none !important;
+    color:#F5C400; /* Ensures the text is the exact yellow from your navigation gradient */
+}
+
+.archive-button.placeholder::before{
+    box-shadow:none !important;
+}
+
+/* ========================= */
+/* Footer */
+/* ========================= */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:auto;
+}
+
+/* ========================= */
+/* Mobile */
+/* ========================= */
+@media(max-width:800px){
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links{
+        text-align:center;
+    }
+
+    .home{
+        flex-direction:column;
+        padding:30px;
+    }
+
+    .home-text{
+        width:90%;
+    }
+
+    .feature-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .about-section,
+    .controller-section{
+        flex-direction:column;
+    }
+
+    .page{
+        width:90%;
+        padding:20px;
+    }
+
+    .console-section,
+    .console-section:nth-of-type(even){
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .console-text{
+        width:85%;
+    }
+
+    .game-section,
+    .game-section:nth-of-type(even){
+        flex-direction:column;
+    }
+
+    .game-text{
+        width:85%;
+    }
+}
+
+/* ================================= */
+/* Theme Transitions */
+/* ================================= */
+body,
+nav,
+footer{
+    transition:
+    background 0.6s ease,
+    color 0.6s ease;
+}
+
+.feature{
+    transition:
+    background 0.6s ease,
+    color 0.6s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.home-board,
+.history-section,
+.about-section,
+.controller-section,
+.console-text,
+.legacy-section,
+.game-text{
+    transition:
+    background 0.6s ease,
+    color 0.6s ease;
+}
+
+/* ================================= */
+/* PLAYSTATION DEFAULT THEME */
+/* ================================= */
+body.theme-playstation{
+    background:
+    radial-gradient(
+        circle at top,
+        #4a4a4a,
+        #2a2a2a,
+        #1b1b1b
+    );
+    color:white;
+}
+
+.theme-playstation nav{
+    background:rgba(25,25,25,0.72);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:3px solid transparent;
+    border-image:
+    linear-gradient(
+        90deg,
+        #E31E24,
+        #F5C400,
+        #00A651,
+        #0072CE
+    ) 1;
+}
+
+.theme-playstation h1{
+    color:#E31E24;
+}
+
+.theme-playstation h2{
+    color:#0072CE;
+}
+
+.theme-playstation h3{
+    color:#00A651;
+}
+
+.theme-playstation p,
+.theme-playstation li{
+    color:#e8e8e8;
+}
+
+.theme-playstation .home-board,
+.theme-playstation .feature,
+.theme-playstation .history-section,
+.theme-playstation .about-section,
+.theme-playstation .controller-section,
+.theme-playstation .console-text,
+.theme-playstation .legacy-section,
+.theme-playstation .game-text{
+    background:
+    linear-gradient(
+        145deg,
+        #505050,
+        #373737
+    );
+    color:white;
+}
+
+.theme-playstation .feature:hover{
+    border-color:#0072CE;
+    box-shadow:
+    0 0 10px #E31E24,
+    0 0 20px #F5C400,
+    0 0 30px #00A651,
+    0 0 40px #0072CE;
+}
+
+.theme-playstation .learn-button{
+    background:#E31E24;
+}
+
+.theme-playstation .learn-button:hover{
+    background:#0072CE;
+}
+
+/* ================================= */
+/* PS1 THEME */
+/* ================================= */
+body.theme-ps1{
+    background:#bcbcbc;
+    color:#111;
+}
+
+.theme-ps1 nav{
+    background:#777;
+}
+
+.theme-ps1 nav a{
+    color:white;
+}
+
+.theme-ps1 .home-board,
+.theme-ps1 .feature,
+.theme-ps1 .history-section,
+.theme-ps1 .about-section,
+.theme-ps1 .controller-section,
+.theme-ps1 .console-text,
+.theme-ps1 .legacy-section,
+.theme-ps1 .game-text{
+    background:#dedede;
+    color:#111;
+    border-radius:8px;
+}
+
+.theme-ps1 h1,
+.theme-ps1 h2,
+.theme-ps1 h3{
+    color:#777;
+}
+
+/* ================================= */
+/* PS2 THEME */
+/* ================================= */
+body.theme-ps2{
+    background:
+    radial-gradient(
+        circle,
+        #14213d,
+        #000
+    );
+}
+
+.theme-ps2 nav{
+    background:#000;
+}
+
+.theme-ps2 .home-board,
+.theme-ps2 .feature,
+.theme-ps2 .history-section,
+.theme-ps2 .about-section,
+.theme-ps2 .controller-section,
+.theme-ps2 .console-text,
+.theme-ps2 .legacy-section,
+.theme-ps2 .game-text{
+    background:#050505;
+    border:1px solid #0066ff;
+    box-shadow:
+    0 0 20px rgba(0,102,255,0.5);
+}
+
+.theme-ps2 h1,
+.theme-ps2 h2,
+.theme-ps2 h3{
+    color:#0099ff;
+}
+
+/* ================================= */
+/* PS3 THEME */
+/* ================================= */
+body.theme-ps3{
+    background:
+    linear-gradient(
+        120deg,
+        #000,
+        #222
+    );
+}
+
+.theme-ps3 nav{
+    background:rgba(0,0,0,0.85);
+}
+
+.theme-ps3 .home-board,
+.theme-ps3 .feature,
+.theme-ps3 .history-section,
+.theme-ps3 .about-section,
+.theme-ps3 .controller-section,
+.theme-ps3 .console-text,
+.theme-ps3 .legacy-section,
+.theme-ps3 .game-text{
+    background:
+    linear-gradient(
+        145deg,
+        #333,
+        #080808
+    );
+}
+
+.theme-ps3 h1,
+.theme-ps3 h2,
+.theme-ps3 h3{
+    color:#66c7ff;
+}
+
+/* ================================= */
+/* PS4 THEME */
+/* ================================= */
+body.theme-ps4{
+    background:
+    radial-gradient(
+        circle at top,
+        #252525,
+        #101010
+    );
+}
+
+.theme-ps4 nav{
+    background:
+    rgba(10,10,10,0.85);
+}
+
+.theme-ps4 h1,
+.theme-ps4 h2,
+.theme-ps4 h3{
+    color:#0070d1;
+}
+
+.theme-ps4 .home-board,
+.theme-ps4 .feature,
+.theme-ps4 .history-section,
+.theme-ps4 .about-section,
+.theme-ps4 .controller-section,
+.theme-ps4 .console-text,
+.theme-ps4 .legacy-section,
+.theme-ps4 .game-text{
+    background:
+    linear-gradient(
+        145deg,
+        #303030,
+        #161616
+    );
+    border:
+    1px solid rgba(0,112,209,0.25);
+}
+
+/* ================================= */
+/* PS5 THEME */
+/* ================================= */
+body.theme-ps5{
+    background:#f2f2f2;
+    color:#111;
+}
+
+.theme-ps5 nav{
+    background:
+    rgba(255,255,255,0.8);
+}
+
+.theme-ps5 nav a{
+    color:#111;
+}
+
+.theme-ps5 .home-board,
+.theme-ps5 .feature,
+.theme-ps5 .history-section,
+.theme-ps5 .about-section,
+.theme-ps5 .controller-section,
+.theme-ps5 .console-text,
+.theme-ps5 .legacy-section,
+.theme-ps5 .game-text{
+    background:white;
+    color:#111;
+    border-radius:25px;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.15);
+}
+
+.theme-ps5 h1,
+.theme-ps5 h2,
+.theme-ps5 h3{
+    color:#0070d1;
+}
+
+/* ==================================== */
+/* Master Fix: Backgrounds Override     */
+/* ==================================== */
+body[class*="theme-"] {
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}/* Border Mask Generator layer */
+.archive-button::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:12px; /* Changed from 50px to 12px to match the blue button */
+    border:3px solid transparent;
+    background:
+        linear-gradient(#3a3a3a, #3a3a3a) padding-box,
+        linear-gradient(90deg, #E31E24, #F5C400, #00A651, #0072CE) border-box;
+    z-index:-1;
+    transition:box-shadow 0.3s ease, background 0.3s ease;
+}

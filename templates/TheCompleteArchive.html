@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{{ console["name"] }} Archive
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page">
+
+<h1>
+{{ console["name"] }}
+</h1>
+
+
+{% for section in sections %}
+
+<div class="history-section">
+
+<h2>
+{{ section["title"] }}
+</h2>
+
+<p>
+{{ section["content"]|safe }}
+</p>
+
+</div>
+
+{% endfor %}
+
+
+
+<div class="archive-navigation">
+
+<h2>
+Explore Other Console Archives
+</h2>
+
+<div class="archive-buttons">
+
+<a class="archive-nav-button {% if console['slug'] == 'ps1' %}active{% endif %}"
+href="{{ url_for('archive', console='ps1') }}">
+PlayStation
+</a>
+
+<a class="archive-nav-button {% if console['slug'] == 'ps2' %}active{% endif %}"
+href="{{ url_for('archive', console='ps2') }}">
+PlayStation 2
+</a>
+
+<a class="archive-nav-button {% if console['slug'] == 'ps3' %}active{% endif %}"
+href="{{ url_for('archive', console='ps3') }}">
+PlayStation 3
+</a>
+
+<a class="archive-nav-button {% if console['slug'] == 'ps4' %}active{% endif %}"
+href="{{ url_for('archive', console='ps4') }}">
+PlayStation 4
+</a>
+
+<a class="archive-nav-button {% if console['slug'] == 'ps5' %}active{% endif %}"
+href="{{ url_for('archive', console='ps5') }}">
+PlayStation 5
+</a>
+
+</div>
+
+</div>
+
+
+</section>
+
+{% endblock %}
